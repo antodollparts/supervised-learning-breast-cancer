@@ -43,9 +43,9 @@ La columna `id` se descarta por no aportar información predictiva. Para el mode
 
 | Modelo | Accuracy | Precision | Recall | F1-score | Falsos positivos | Falsos negativos |
 |---|---|---|---|---|---|---|
-| KNN | | | | | | |
-| SVM | | | | | | |
-| MLP | | | | | | |
+| KNN | 0.9386 | 0.973 | 0.8571 | 0.9114 | 1 | 6 |
+| SVM | 0.9737 | 1.000 | 0.9286 | 0.9630 | 0 | 3 |
+| MLP | 0.9737 | 1.000 | 0.9286 | 0.9630 | 0 | 3 |
 
 ## Conclusiones
 
