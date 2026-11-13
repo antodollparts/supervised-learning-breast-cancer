@@ -49,7 +49,10 @@ La columna `id` se descarta por no aportar información predictiva. Para el mode
 
 ## Conclusiones
 
-> Resumir las respuestas del notebook: mejor algoritmo, algoritmo con más errores, diferencias de comportamiento y justificación de la elección considerando que, en diagnóstico médico, un falso negativo (tumor maligno clasificado como benigno) es más grave que un falso positivo.
+- **Mejor rendimiento:** SVM y MLP empataron (accuracy 0.9737, F1 0.9630) y acertaron 111 de 114 casos. KNN quedó por debajo (accuracy 0.9386).
+- **Más errores:** KNN, con 7 errores, de los cuales 6 fueron falsos negativos (tumores malignos clasificados como benignos). Su recall de la clase maligna fue de 0.8571.
+- **Diferencias de comportamiento:** KNN no entrena un modelo, solo compara cada caso con sus vecinos más cercanos, y es sensible a la escala de los datos. SVM busca la frontera de margen máximo y es estable en datasets pequeños. MLP aprende patrones no lineales, pero depende de la inicialización y de más hiperparámetros.
+- **Elección del modelo:** en diagnóstico médico la exactitud no basta: un falso negativo retrasa el tratamiento de un paciente con cáncer, así que se prioriza el recall de la clase maligna. SVM y MLP tienen la mayor exactitud y también el menor número de falsos negativos (3). Elegimos **SVM** porque, con el mismo desempeño, necesita menos hiperparámetros y no depende de la inicialización aleatoria. Ningún modelo eliminó por completo los falsos negativos, así que en un uso real convendría ajustar el umbral de decisión para aumentar el recall.
 
 ## Estructura del repositorio
 
